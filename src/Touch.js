@@ -389,6 +389,7 @@ export class TouchBackend {
         const delay = (e.type === eventNames.touch.start)
             ? this.delayTouchStart
             : this.delayMouseStart;
+        clearTimeout(this.timeout);
         this.timeout = setTimeout(this.handleTopMoveStart.bind(this, e), delay);
         this.waitingForDelay = true
     }
